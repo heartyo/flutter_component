@@ -15,6 +15,8 @@ class _ChipPageState extends State<ChipPage> {
 
   String select='';
   List<String> selected = [];
+  String choice = 'ios';
+
 
   @override
   Widget build(BuildContext context) {
@@ -113,8 +115,18 @@ class _ChipPageState extends State<ChipPage> {
             Wrap(
               spacing: 8.0,
               children: tags.map((tag){
-                return ChoiceChip(label: Text(tag),
-                  selected: false,
+                return ChoiceChip(label: Text(tag,),
+                  selected: tag==choice,
+                  selectedColor: Colors.redAccent,
+                  elevation: 0,//本身阴影
+                  pressElevation: 0,//按下阴影
+                  backgroundColor: Colors.grey,
+                  onSelected: (b){
+                    setState(() {
+                      choice =tag;
+                    });
+                  },
+                  labelStyle: TextStyle(color: Colors.white) ,
                  );
 
               }).toList(),

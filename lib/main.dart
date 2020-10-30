@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_component/chip_widget.dart';
+import 'package:flutter_component/dialog_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -46,7 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   }) );
 
                 },child: Text('Chip标签'),color: Colors.white,),
-                RaisedButton(onPressed: (){},child: Text('Chip标签'),color: Colors.white,),
+                RaisedButton(onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context){
+                    return DialogPage(title: 'Dialog弹窗',);
+                  }) );
+                },child: Text('Dialog弹窗'),color: Colors.white,),
                 RaisedButton(onPressed: (){},child: Text('Chip标签'),color: Colors.white,),
                 RaisedButton(onPressed: (){},child: Text('Chip标签'),color: Colors.white,),
                 RaisedButton(onPressed: (){},child: Text('Chip标签Chip标签'),color: Colors.white,),
